@@ -1,80 +1,30 @@
 from django.shortcuts import render
 # from users.models import student
 # Create your views here.
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
+import xlrd
+from .models import Tcourse
 from django.http import HttpResponse
+from users.forms import UploadExcelForm
 
 
-# def hello_world(request):
-#     return HttpResponse("Hello World!")
-#
-#
-# def add_user(request):
-#     username = request.GET.get('username')
-#     cuser = student.objects.create(cname=username)
-#     cuser.save()
-#     return HttpResponse(cuser.cname)
-#
-#
-# def del_user(request):
-#     username = request.GET.get('username')
-#     duser = student.objects.get(cname=username)
-#     duser.delete()
-#     return HttpResponse(duser.cname)
-#
-#
-# def modify_user(request):
-#     username = request.GET.get('username')
-#     muser = student.objects.get(cname=username)
-#     muser.cname = 'test'
-#     muser.save()
-#     return HttpResponse(muser.cname)
-#
-#
-# def check_cookie(request):
-#     if 'test_counter' not in request.COOKIES:
-#         tmpcounter = 1
-#         msg = 'create counter'
-#     else:
-#         tmpcounter = int(request.COOKIES['test_counter'])
-#         tmpcounter = tmpcounter + 1
-#         msg = 'counter = ' + str(tmpcounter)
-#
-#     res = HttpResponse(msg)
-#     res.set_cookie('test_counter', tmpcounter)
-#     return res
-#
-#
-# def del_cookie(request):
-#     if 'test_counter' in request.COOKIES:
-#         msg = 'del counter, value = ' + str(request.COOKIES['test_counter'])
-#         res = HttpResponse(msg)
-#         res.delete_cookie('test_counter')
-#         return res
-#     else:
-#         return HttpResponse('No cookie')
-#
-#
-# def check_session(request):
-#     if 'stmp_counter' not in request.session:
-#         tmpcounter = 1
-#         msg = 'create counter'
-#     else:
-#         tmpcounter = int(request.session['stmp_counter'])
-#         tmpcounter = tmpcounter + 1
-#         msg = 'counter = ' + str(tmpcounter)
-#
-#     res = HttpResponse(msg)
-#     request.session['stmp_counter'] = tmpcounter
-#     request.session.set_expiry(3600)
-#     return res
-#
-#
-# def del_session(request):
-#     if 'stmp_counter' in request.session:
-#         msg = 'del counter, value = ' + str(request.session['stmp_counter'])
-#         res = HttpResponse(msg)
-#         del request.session['stmp_counter']
-#         return res
-#     else:
-#         return HttpResponse('No session')
+def ximport(request):
+    if request.method == 'POST':
+        form = UploadExcelForm(request.POST, request.FILES)
+        if form.is_valid():
+            wb = xlrd.open_workbook(filename=None, file_contents=request.FILES['excel'].read())
+            table = wb.sheets()[0]
+            row = table.nrows
+            for i in range(1, row):
+                col = table.row_values(i)
+                if not User.objects.filter(username=col[3], email=col[4]).exists():
+                    tmp_user = User.objects.create(username=col[3], email=col[4])
+                if not Tcourse.objects.filter(dash_id=col[0]).exists():
+                    tmp_course = Tcourse.objects.create(dash_id=col[0], course_id=col[1])
+                    Tcourse.objects.get(course_id=col[1]).tstaff.add(tmp_user)
+
+            return HttpResponse('OK')
+        else:
+            return HttpResponse('invalid file type')
+
+    return render(request, "uploadfile.html", locals())

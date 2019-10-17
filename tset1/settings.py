@@ -121,4 +121,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'root_static/')
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+
+
+# EMAIL setting
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'mail.gandi.net'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'admin@twshop.asia'
+EMAIL_HOST_PASSWORD = '[Xyaw007]'
+DEFAULT_FROM_EMAIL = '中華開放教育平台 <admin@twshop.asia>'

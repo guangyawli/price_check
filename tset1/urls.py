@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-# from users.views import hello_world, add_user, del_user, modify_user, check_cookie, del_cookie, check_session, del_session
+from users.views import ximport
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
+    path('ximport/', ximport)
 ]
