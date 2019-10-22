@@ -1,0 +1,20 @@
+<VirtualHost *:80>
+    ServerName payment.twshop.asia
+    ServerAdmin gyli@mail.fcu.edu.tw
+  
+    Alias /static/ /home/xyaw/tset1/root_static/
+  
+  
+    <Directory /home/xyaw/tset1/root_static>
+        Require all granted
+    </Directory>
+
+    WSGIScriptAlias / /home/xyaw/tset1/tset1/wsgi.py
+   
+  
+    <Directory /home/xyaw/tset1/tset1>
+    <Files wsgi.py>
+        Require all granted
+    </Files>
+    </Directory>
+</VirtualHost>
