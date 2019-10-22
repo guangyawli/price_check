@@ -11,8 +11,13 @@ class Tcourse(models.Model):
 
 
 class Emails(models.Model):
-  e_receive = models.CharField(max_length=200, blank=False, default='default')
-  atitle = models.CharField(max_length=100, blank=False, default='default')
-  acontent = RichTextField(blank=True, null=True)
-  astatus = models.CharField(max_length=50, blank=True)
+  e_from = models.CharField(max_length=50, blank=False, default='default_from')
+  e_title = models.CharField(max_length=100, blank=False, default='default_title')
+  e_content = RichTextField(blank=True, null=True)
+  e_status = models.CharField(max_length=50, blank=True)
 
+
+class MailServer(models.Model):
+  m_server = models.CharField(max_length=50, blank=False, default='mail.gandi.net')
+  m_user = models.CharField(max_length=50, blank=False, default='test@twshop.asia')
+  m_password = models.CharField(max_length=30, blank=False, default='default_password')

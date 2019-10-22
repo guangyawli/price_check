@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from users.views import ximport
+from users.views import ximport,send_mails
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ximport/', ximport)
+    path('ximport/', ximport),
+    path('send_mails/', send_mails),
 ]
