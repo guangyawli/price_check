@@ -2,17 +2,17 @@
     ServerName payment.twshop.asia
     ServerAdmin gyli@mail.fcu.edu.tw
   
-    Alias /static/ /home/xyaw/tset1/root_static/
+    Alias /static/ /home/xyaw/auto_mail/root_static/
   
   
-    <Directory /home/xyaw/tset1/root_static>
+    <Directory /home/xyaw/auto_mail/root_static>
         Require all granted
     </Directory>
 
-    WSGIScriptAlias / /home/xyaw/tset1/tset1/wsgi.py
+    WSGIScriptAlias / /home/xyaw/auto_mail/tset1/wsgi.py
    
   
-    <Directory /home/xyaw/tset1/tset1>
+    <Directory /home/xyaw/auto_mail/tset1>
     <Files wsgi.py>
         Require all granted
     </Files>
