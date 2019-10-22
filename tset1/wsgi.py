@@ -11,19 +11,17 @@ import os
 import sys
 from os.path import join,dirname,abspath
 
-from django.core.wsgi import get_wsgi_application
 
 PROJECT_DIR = dirname(dirname(abspath(__file__)))
 
 sys.path.insert(0, PROJECT_DIR)
-sys.path.append('/home/xyaw/tset1/xvenv/Lib/site-packages')
+sys.path.append('/home/xyaw/auto_mail/xvenv/lib/python3.6/site-packages/')
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tset1.settings')
+from django.core.wsgi import get_wsgi_application
+
+os.environ['DJANGO_SETTINGS_MODULE']='tset1.settings'
 
 application = get_wsgi_application()
-
-
-
 
 
 
