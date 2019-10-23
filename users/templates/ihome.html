@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自動發信機</title>
+</head>
+<body>
+<div><span style="background-color:#ffffff"><span style="color:#000000">歡迎進入自動發信機，請選擇要執行的項目</span></span></div>
+<div>
+    {% if not user.is_authenticated %}
+        <a href='http://payment.twshop.asia/admin/login/?next=/' style="color:#cc3b35; font-size: 30px;" target="_blank">請先登入</a></span></span>
+    {% endif %}
+</div>
+
+
+<div>
+<div><span style="background-color:#ffffff"><span style="color:#000000;font-size: 20px;">
+    <a href= ximport  style="color:#1155cc;  target="_blank">匯入資料</a></span></span></div>
+
+<div><span style="background-color:#ffffff"><span style="color:#000000; font-size: 20px;">
+    <a href= send_mails  style="color:#1155cc" target="_blank">發信功能</a></span></span></div>
+</div>
+
+</body>
+</html>

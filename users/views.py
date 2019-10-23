@@ -1,4 +1,4 @@
-from django.contrib.auth.decorators import login_required
+#from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.contrib.auth.models import User
 import xlrd
@@ -50,7 +50,7 @@ def send_mails(request):
         # t = loader.get_template(email_template_name)
         mail_list = target_mails
 
-        tmp_server = MailServer.objects.get(id=1)
+        tmp_server = MailServer.objects.get(id=2)
 
         conn = get_connection()
         conn.username = tmp_server.m_user              # username
@@ -67,3 +67,7 @@ def send_mails(request):
         conn.close()
 
         return HttpResponse('send mail ok')
+
+
+def home(request):
+    return render(request, "ihome.html", locals())
