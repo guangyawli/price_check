@@ -1,9 +1,10 @@
 #from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
+from django.contrib import auth
 from django.contrib.auth.models import User
 import xlrd
 from .models import Tcourse, Emails, MailServer
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from users.forms import UploadExcelForm
 # Email
 from django.core.mail import EmailMultiAlternatives, get_connection
@@ -60,14 +61,20 @@ def send_mails(request):
 
         subject, from_email, to = test_title, test_from, mail_list
         html_content = str(test_content) #t.render(dict(context))
-        msg = EmailMultiAlternatives(subject, html_content, from_email, to)
+        msg = EmailMultiAlternatives(subject, html_content, from_email, bcc=to)
         msg.attach_alternative(html_content, "text/html")
 
         conn.send_messages([msg, ])  # send_messages发送邮件
         conn.close()
 
-        return HttpResponse('send mail ok')
+        err_msg = 'send mail ok'
+        return render(request, "ihome.html", locals())
 
 
 def home(request):
     return render(request, "ihome.html", locals())
+
+
+def logout(request):
+    auth.logout(request)
+    return HttpResponseRedirect('/')

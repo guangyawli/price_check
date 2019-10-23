@@ -5,21 +5,42 @@
     <title>自動發信機</title>
 </head>
 <body>
-<div><span style="background-color:#ffffff"><span style="color:#000000">歡迎進入自動發信機，請選擇要執行的項目</span></span></div>
+<div><span style="background-color:#ffffff">
+    <span style="color:#000000">歡迎進入自動發信機，
+    <br>請選擇要執行的項目：<br>
+    </span>
+</span></div>
 <div>
     {% if not user.is_authenticated %}
-        <a href='http://payment.twshop.asia/admin/login/?next=/' style="color:#cc3b35; font-size: 30px;" target="_blank">請先登入</a></span></span>
+        <a href='/admin/login/?next=/' style="color:#cc3b35; font-size: 30px;" target="_self">請先登入</a></span></span>
     {% endif %}
 </div>
+{% if err_msg %}
+    <div>
+        <p>
+            {{ err_msg }}
+        </p>
+    </div>
+{% endif %}
+{% if user.is_authenticated %}
+    <div>
+        <div><span style="background-color:#ffffff"><span style="color:#000000;font-size: 20px;">
+            <a href= ximport  style="color:#1155cc;  target="_self">匯入資料</a></span></span>
+        </div>
+        <div><span style="background-color:#ffffff"><span style="color:#000000; font-size: 20px;">
+            <a href= send_mails  style="color:#1155cc" target="_self">發信功能</a></span></span>
+        </div>
 
+        <div><span style="background-color:#ffffff"><span style="color:#000000; font-size: 20px;">
+            <a href= '/admin/'  style="color:#1155cc" target="_self">管理者介面</a></span></span>
+        </div>
 
-<div>
-<div><span style="background-color:#ffffff"><span style="color:#000000;font-size: 20px;">
-    <a href= ximport  style="color:#1155cc;  target="_blank">匯入資料</a></span></span></div>
+    </div>
 
-<div><span style="background-color:#ffffff"><span style="color:#000000; font-size: 20px;">
-    <a href= send_mails  style="color:#1155cc" target="_blank">發信功能</a></span></span></div>
-</div>
+    <div><span style="background-color:#ffffff"><span style="color:#000000; font-size: 20px;">
+            <a href= '/logout/'  style="color:#1155cc" target="_self">登出</a></span></span>
+    </div>
+{% endif %}
 
 </body>
 </html>

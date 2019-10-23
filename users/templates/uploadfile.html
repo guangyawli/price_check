@@ -6,9 +6,9 @@
 <body>
 <p>上傳EXCEL表格</p>
 <form class="" action="" method="post" enctype="multipart/form-data" >
-{% csrf_token %}
-<input type="file" name="excel">
-<input type="submit" value="上傳">
+    {% csrf_token %}
+    <input type="file" name="excel">
+    <input type="submit" value="上傳">
 </form>
 </body>
 </html>
