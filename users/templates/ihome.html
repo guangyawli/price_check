@@ -22,16 +22,23 @@
             {{ err_msg }}
         </p>
     </div>
-{% endif %}
-{% if user.is_authenticated %}
+    <div><span style="background-color:#ffffff"><span style="color:#000000; font-size: 20px;">
+            <a href= '/'  style="color:#1155cc" target="_self">回首頁</a></span></span>
+    </div>
+{% else %}
+    {% if user.is_authenticated %}
     <div>
         <div><span style="background-color:#ffffff"><span style="color:#000000;font-size: 20px;">
             <a href= ximport  style="color:#1155cc;  target="_self">匯入資料</a></span></span>
         </div>
         <div><span style="background-color:#ffffff"><span style="color:#000000; font-size: 20px;">
-            <a href= send_mails  style="color:#1155cc" target="_self">發信功能</a></span></span>
+            <a href= send_mails  style="color:#1155cc" target="_self">固定樣板發信功能</a></span></span>
         </div>
-
+        {% comment %}
+        <div><span style="background-color:#ffffff"><span style="color:#000000; font-size: 20px;">
+            <a href= send_mails_ii  style="color:#1155cc" target="_self">彈性發信功能</a></span></span>
+        </div>
+        {% endcomment %}
         <div><span style="background-color:#ffffff"><span style="color:#000000; font-size: 20px;">
             <a href= '/admin/'  style="color:#1155cc" target="_self">管理者介面</a></span></span>
         </div>
@@ -41,6 +48,8 @@
     <div><span style="background-color:#ffffff"><span style="color:#000000; font-size: 20px;">
             <a href= '/logout/'  style="color:#1155cc" target="_self">登出</a></span></span>
     </div>
+    {% endif %}
+
 {% endif %}
 
 </body>

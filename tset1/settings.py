@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!vu#_b5ne5w9#4xj)vttlkk3hw!#f)ks$8o!#ck6+dy(-wrh@o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['payment.twshop.asia']
+ALLOWED_HOSTS = []
 
 
 # Application definition

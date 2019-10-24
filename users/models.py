@@ -2,6 +2,11 @@ from django.contrib.auth.models import User
 from django.db import models
 from ckeditor.fields import RichTextField
 
+class Tprofile(models.Model):
+  customer_cancel = models.CharField(max_length=10, blank=True)
+  cancel_reason = models.CharField(max_length=100, blank=True)
+  user = models.OneToOneField(User, on_delete=models.CASCADE)
+
 
 class Tcourse(models.Model):
   dash_id = models.CharField(max_length=20, blank=False, unique=True, default='test0001')

@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from users.views import ximport, send_mails, home, logout
+from users.views import ximport, send_mails, home, logout, send_mails_ii, cancel_inform
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ximport/', ximport, name='ximport'),
     path('send_mails/', send_mails, name='send_mails'),
+    path('send_mails_ii/', send_mails_ii, name='send_mails_ii'),
     path('', home, name='home'),
+    path('cancel_inform', cancel_inform, name='cancel_inform'),
     path('logout/', logout, name='logout'),
 ]
