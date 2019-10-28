@@ -25,7 +25,7 @@ SECRET_KEY = '!vu#_b5ne5w9#4xj)vttlkk3hw!#f)ks$8o!#ck6+dy(-wrh@o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['autoemail.openedu.tw']
+ALLOWED_HOSTS = ['autoemail.openedu.tw/']
 
 
 # Application definition
@@ -134,5 +134,5 @@ EMAIL_USE_TLS = True
 # EMAIL_HOST = 'mail.gandi.net'
 EMAIL_PORT = 587
 # EMAIL_HOST_USER = 'admin@twshop.asia'
-# EMAIL_HOST_PASSWORD = '[Xyaw007]'
+# EMAIL_HOST_PASSWORD = '[Test]'
 DEFAULT_FROM_EMAIL = '中華開放教育平台 <admin@twshop.asia>'

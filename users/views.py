@@ -9,6 +9,7 @@ from users.forms import UploadExcelForm
 # Email
 from django.core.mail import EmailMultiAlternatives, get_connection
 from django.template import loader
+from tset1.settings import STATIC_ROOT
 
 
 def ximport(request):
@@ -84,7 +85,7 @@ def send_mails(request):
             html_content = t.render(dict(context))  # str(test_content)
             msg = EmailMultiAlternatives(subject, html_content, from_email, bcc=to)
             msg.attach_alternative(html_content, "text/html")
-
+            msg.attach_file(STATIC_ROOT+'insights_readme.pdf')
             conn.send_messages([msg, ])  # send_messages发送邮件
 
         conn.close()
