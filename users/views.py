@@ -10,6 +10,7 @@ from users.forms import UploadExcelForm
 from django.core.mail import EmailMultiAlternatives, get_connection
 from django.template import loader
 from tset1.settings import STATIC_ROOT
+import datetime
 
 
 def ximport(request):
@@ -56,6 +57,7 @@ def send_mails(request):
         conn.open()
 
         all_courses = Tcourse.objects.all()
+        print(datetime.date.today())
         for courses in all_courses:
             tmp_users = courses.tstaff.all()
 

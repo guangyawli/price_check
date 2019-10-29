@@ -25,7 +25,7 @@ SECRET_KEY = '!vu#_b5ne5w9#4xj)vttlkk3hw!#f)ks$8o!#ck6+dy(-wrh@o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['autoemail.openedu.tw/']
+ALLOWED_HOSTS = ['autoemail.openedu.tw']
 
 
 # Application definition
