@@ -14,39 +14,44 @@ import datetime
 
 
 def ximport(request):
-    if request.method == 'POST':
-        form = UploadExcelForm(request.POST, request.FILES)
-        if form.is_valid():
-            wb = xlrd.open_workbook(filename=None, file_contents=request.FILES['excel'].read())
-            table = wb.sheets()[0]
-            row = table.nrows
-            for i in range(1, row):
-                col = table.row_values(i)
-                if not User.objects.filter(username=col[3], email=col[4]).exists():
-                    tmp_user = User.objects.create(username=col[3], email=col[4])
-                else:
-                    tmp_user = User.objects.get(username=col[3], email=col[4])
+    if request.user.is_staff is False:
+        err_msg = 'No permission !'
+        return render(request, "ihome.html", locals())
+    else:
+        if request.method == 'POST':
+            form = UploadExcelForm(request.POST, request.FILES)
+            if form.is_valid():
+                wb = xlrd.open_workbook(filename=None, file_contents=request.FILES['excel'].read())
+                table = wb.sheets()[0]
+                row = table.nrows
+                for i in range(1, row):
+                    col = table.row_values(i)
+                    if not User.objects.filter(username=col[3], email=col[4]).exists():
+                        tmp_user = User.objects.create(username=col[3], email=col[4])
+                    else:
+                        tmp_user = User.objects.get(username=col[3], email=col[4])
 
-                if not Tcourse.objects.filter(dash_id=col[0]).exists():
-                    tmp_course = Tcourse.objects.create(dash_id=col[0], course_id=col[1], course_name=col[2])
-                else:
-                    tmp_course = Tcourse.objects.get(dash_id=col[0], course_id=col[1])
+                    if not Tcourse.objects.filter(dash_id=col[0]).exists():
+                        tmp_course = Tcourse.objects.create(dash_id=col[0], course_id=col[1], course_name=col[2])
+                    else:
+                        tmp_course = Tcourse.objects.get(dash_id=col[0], course_id=col[1])
 
-                if tmp_user not in Tcourse.objects.get(course_id=col[1]).tstaff.all():
-                    Tcourse.objects.get(course_id=col[1]).tstaff.add(tmp_user)
+                    if tmp_user not in Tcourse.objects.get(course_id=col[1]).tstaff.all():
+                        Tcourse.objects.get(course_id=col[1]).tstaff.add(tmp_user)
 
-            err_msg = 'import data ok'
-            return render(request, "ihome.html", locals())
-        else:
-            err_msg = 'invalid file type'
-            return render(request, "ihome.html", locals())
+                err_msg = 'import data ok'
+                return render(request, "ihome.html", locals())
+            else:
+                err_msg = 'invalid file type'
+                return render(request, "ihome.html", locals())
 
-    return render(request, "uploadfile.html", locals())
+        return render(request, "uploadfile.html", locals())
 
 
 def send_mails(request):
     if request.user.is_staff is False:
-        return HttpResponse(' No permission ! ')
+        err_msg = 'No permission !'
+        return render(request, "ihome.html", locals())
     else:
         tmp_server = MailServer.objects.get(id=1)
 
@@ -57,27 +62,28 @@ def send_mails(request):
         conn.open()
 
         all_courses = Tcourse.objects.all()
-        print(datetime.date.today())
+        #print(datetime.date.today())
         for courses in all_courses:
             tmp_users = courses.tstaff.all()
 
             target_mails = []
             for tmp_user in tmp_users:
                 target_mails.append(tmp_user.email)
-
-            print(target_mails)
-            print(courses.course_id)
+            #print(target_mails)
+            #print(courses.course_id)
 
             test_from = Emails.objects.get(e_status='default').e_from
             test_title = Emails.objects.get(e_status='default').e_title
+            announcement = Emails.objects.get(e_status='default').e_content
 
             # for_cancel_url = 'http://'+request.get_host()+'/cancel_inform'
             # print(for_cancel_url)
             context = {'insight_url': 'https://insights.openedu.tw/courses/',
                        'course_id': courses.course_id,
-                       'course_name': courses.course_name
+                       'course_name': courses.course_name,
+                       'announcement': announcement
                        }
-            print(courses.course_name)
+            #print(courses.course_name)
             email_template_name = 'insight_dash.html'
             t = loader.get_template(email_template_name)
 
