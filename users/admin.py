@@ -1,9 +1,9 @@
 from django.contrib import admin
-from users.models import Tcourse, Emails, MailServer
+from users.models import Tcourse, Emails, MailServer, Tprofile
 
 
 class TcourseAdmin(admin.ModelAdmin):
-    list_display = ('dash_id', 'course_id', 'course_name')
+    list_display = ('dash_id', 'course_id', 'course_name', 'start_date', 'end_date')
 
 
 class EmailsAdmin(admin.ModelAdmin):
@@ -14,7 +14,12 @@ class MailServerAdmin(admin.ModelAdmin):
     list_display = ('m_server', 'm_user', 'm_password')
 
 
+class TprofileAdmin(admin.ModelAdmin):
+    list_display = ('user', 'cancel_flag', 'cancel_reason')
+
+
 admin.site.register(Tcourse, TcourseAdmin)
 admin.site.register(Emails, EmailsAdmin)
 admin.site.register(MailServer, MailServerAdmin)
+admin.site.register(Tprofile, TprofileAdmin)
 

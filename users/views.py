@@ -30,9 +30,11 @@ def ximport(request):
                         tmp_user = User.objects.create(username=col[3], email=col[4])
                     else:
                         tmp_user = User.objects.get(username=col[3], email=col[4])
-
                     if not Tcourse.objects.filter(dash_id=col[0]).exists():
-                        tmp_course = Tcourse.objects.create(dash_id=col[0], course_id=col[1], course_name=col[2])
+                        date1 = datetime.datetime.strptime(col[5], '%Y/%m/%d')
+                        date2 = datetime.datetime.strptime(col[6], '%Y/%m/%d')
+                        tmp_course = Tcourse.objects.create(dash_id=col[0], course_id=col[1], course_name=col[2],
+                                                            start_date=date1, end_date=date2)
                     else:
                         tmp_course = Tcourse.objects.get(dash_id=col[0], course_id=col[1])
 
@@ -61,7 +63,10 @@ def send_mails(request):
         conn.host = tmp_server.m_server  # mail server
         conn.open()
 
-        all_courses = Tcourse.objects.all()
+        #尚未開課結束的所有課程
+        all_courses = Tcourse.objects.filter(end_date__gt=datetime.datetime.now())
+        #print(datetime.datetime.now())
+        #all_courses = Tcourse.objects.all()
         #print(datetime.date.today())
         for courses in all_courses:
             tmp_users = courses.tstaff.all()
@@ -144,6 +149,58 @@ def home(request):
 
 def cancel_inform(request):
     return HttpResponse('此功能停用，請洽管理員')
+
+
+def send_test(request):
+    if request.user.is_staff is False:
+        err_msg = 'No permission !'
+        return render(request, "ihome.html", locals())
+    else:
+        tmp_server = MailServer.objects.get(id=1)
+
+        conn = get_connection()
+        conn.username = tmp_server.m_user  # username
+        conn.password = tmp_server.m_password  # password
+        conn.host = tmp_server.m_server  # mail server
+        conn.open()
+        for i in range(1, 100):
+            if Tcourse.objects.filter(id=i).exists():
+                test_course = Tcourse.objects.get(id=i)
+                break
+        tmp_user = User.objects.get(username='tw.openedu')
+
+        target_mails = []
+        target_mails.append(tmp_user.email)
+        # print(target_mails)
+        # print(courses.course_id)
+
+        test_from = Emails.objects.get(e_status='default').e_from
+        test_title = Emails.objects.get(e_status='default').e_title
+        announcement = Emails.objects.get(e_status='default').e_content
+
+        context = {'insight_url': 'https://insights.openedu.tw/courses/',
+                   'course_id': test_course.course_id,
+                   'course_name': test_course.course_name,
+                   'announcement': announcement
+                   }
+        # print(courses.course_name)
+        email_template_name = 'insight_dash.html'
+        t = loader.get_template(email_template_name)
+
+        mail_list = target_mails
+
+        subject, from_email, to = test_title, test_from, mail_list
+        html_content = t.render(dict(context))  # str(test_content)
+        msg = EmailMultiAlternatives(subject, html_content, from_email, bcc=to)
+        msg.attach_alternative(html_content, "text/html")
+        msg.attach_file(STATIC_ROOT + 'insights_readme.pdf')
+        conn.send_messages([msg, ])  # send_messages发送邮件
+
+        conn.close()
+
+        err_msg = 'send mail ok'
+        return render(request, "ihome.html", locals())
+
 
 def logout(request):
     auth.logout(request)

@@ -1,9 +1,10 @@
 from django.contrib.auth.models import User
 from django.db import models
 from ckeditor.fields import RichTextField
+from datetime import date
 
 class Tprofile(models.Model):
-  customer_cancel = models.CharField(max_length=10, blank=True)
+  cancel_flag = models.CharField(max_length=10, blank=True)
   cancel_reason = models.CharField(max_length=100, blank=True)
   user = models.OneToOneField(User, on_delete=models.CASCADE)
 
@@ -13,6 +14,8 @@ class Tcourse(models.Model):
   course_id = models.CharField(max_length=50, blank=False, unique=True)
   course_name = models.CharField(max_length=80, blank=True)
   tstaff = models.ManyToManyField(User, blank=False)
+  start_date = models.DateField(default=date.today)
+  end_date = models.DateField(default=date.today)
 
 
 class Emails(models.Model):
