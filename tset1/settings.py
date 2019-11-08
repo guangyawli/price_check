@@ -25,7 +25,7 @@ SECRET_KEY = '!vu#_b5ne5w9#4xj)vttlkk3hw!#f)ks$8o!#ck6+dy(-wrh@o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['autoemail.openedu.tw']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
-    'ckeditor'
+    'ckeditor',
+    'django_q'
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,14 @@ EMAIL_PORT = 587
 # EMAIL_HOST_USER = 'admin@twshop.asia'
 # EMAIL_HOST_PASSWORD = '[Test]'
 DEFAULT_FROM_EMAIL = '中華開放教育平台 <admin@twshop.asia>'
+
+
+Q_CLUSTER = {
+    'name': 'DjangORM',
+    'workers': 1,
+    'timeout': 1800,
+    'retry': 120,
+    'queue_limit': 50,
+    'bulk': 10,
+    'orm': 'default'
+}
