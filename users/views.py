@@ -76,7 +76,11 @@ def send_mails_ii():
     conn.open()
 
     # 尚未開課結束的所有課程
-    all_courses = Tcourse.objects.filter(end_date__gt=datetime.datetime.now())
+    today = datetime.datetime.now()
+    delta = datetime.timedelta(days=-14)
+    target_day = today+delta
+    #print(target_day)
+    all_courses = Tcourse.objects.filter(end_date__gte=target_day)
     # print(datetime.datetime.now())
     # all_courses = Tcourse.objects.all()
     # print(datetime.date.today())
