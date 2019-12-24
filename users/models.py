@@ -3,6 +3,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from datetime import date
 
+
 class Tprofile(models.Model):
   cancel_flag = models.CharField(max_length=10, blank=True)
   cancel_reason = models.CharField(max_length=100, blank=True)
