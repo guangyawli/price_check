@@ -94,7 +94,7 @@ def send_mails_ii():
         # print(courses.course_id)
 
         test_from = Emails.objects.get(e_status='default').e_from
-        test_title = Emails.objects.get(e_status='default').e_title + ">>OpenEdu 課程「"+courses.course_name+"」本週學習分析"
+        test_title = "OpenEdu 課程「"+courses.course_name+"」本週學習分析"
         announcement = Emails.objects.get(e_status='default').e_content
 
         # for_cancel_url = 'http://'+request.get_host()+'/cancel_inform'
@@ -153,7 +153,7 @@ def send_test(request):
     # print(courses.course_id)
 
     test_from = Emails.objects.get(e_status='default').e_from
-    test_title = Emails.objects.get(e_status='default').e_title + ">>OpenEdu 課程「"+test_course.course_name+"」本週學習分析"
+    test_title = "OpenEdu 課程「"+test_course.course_name+"」本週學習分析"
     announcement = Emails.objects.get(e_status='default').e_content
 
     context = {'insight_url': 'https://insights.openedu.tw/courses/',
