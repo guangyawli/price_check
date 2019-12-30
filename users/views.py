@@ -148,6 +148,7 @@ def send_test(request):
 
     target_mails = []
     target_mails.append(tmp_user.email)
+    target_mails.append('gyli@mail.fcu.edu.tw')
     # print(target_mails)
     # print(courses.course_id)
 
