@@ -27,10 +27,10 @@ def ximport(request):
                 row = table.nrows
                 for i in range(1, row):
                     col = table.row_values(i)
-                    if not User.objects.filter(username=col[3], email=col[4]).exists():
+                    if not User.objects.filter(username=col[3]).exists():
                         tmp_user = User.objects.create(username=col[3], email=col[4])
                     else:
-                        tmp_user = User.objects.get(username=col[3], email=col[4])
+                        tmp_user = User.objects.get(username=col[3])
                     if not Tcourse.objects.filter(dash_id=col[0]).exists():
                         date1 = datetime.datetime.strptime(col[5], '%Y-%m-%d')
                         date2 = datetime.datetime.strptime(col[6], '%Y-%m-%d')
