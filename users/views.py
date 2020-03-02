@@ -12,7 +12,7 @@ from django.template import loader
 from tset1.settings import STATIC_ROOT
 import datetime,time
 from django_q.models import Schedule
-
+import logging
 
 def ximport(request):
     if request.user.is_staff is False:
@@ -67,6 +67,9 @@ def send_mails(request):
 
 
 def send_mails_ii():
+
+    logging.basicConfig(filename='/home/xyaw/auto_mail/logs/auto_mail.log', level=logging.DEBUG)
+
     tmp_server = MailServer.objects.get(id=1)
 
     conn = get_connection()
@@ -92,6 +95,7 @@ def send_mails_ii():
             target_mails.append(tmp_user.email)
         # print(target_mails)
         # print(courses.course_id)
+        logging.debug(str(target_mails)+str(datetime.datetime.now()))
 
         test_from = Emails.objects.get(e_status='default').e_from
         test_title = "OpenEdu 課程「"+courses.course_name+"」本週學習分析"
@@ -132,6 +136,8 @@ def cancel_inform(request):
 
 
 def send_test(request):
+    logging.basicConfig(filename='/home/xyaw/auto_mail/logs/auto_mail.log', level=logging.DEBUG)
+
     tmp_server = MailServer.objects.get(id=1)
 
     conn = get_connection()
@@ -151,6 +157,7 @@ def send_test(request):
     target_mails.append('gyli@mail.fcu.edu.tw')
     # print(target_mails)
     # print(courses.course_id)
+    logging.debug(str(target_mails) + str(datetime.datetime.now()))
 
     test_from = Emails.objects.get(e_status='default').e_from
     test_title = "OpenEdu 課程「"+test_course.course_name+"」本週學習分析"
