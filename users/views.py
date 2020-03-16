@@ -9,7 +9,7 @@ from users.forms import UploadExcelForm
 # Email
 from django.core.mail import EmailMultiAlternatives, get_connection
 from django.template import loader
-from tset1.settings import STATIC_ROOT
+from tset1.settings import STATIC_ROOT,BASE_DIR
 import datetime,time
 from django_q.models import Schedule
 import logging
@@ -68,7 +68,7 @@ def send_mails(request):
 
 def send_mails_ii():
 
-    logging.basicConfig(filename='/home/xyaw/auto_mail/logs/auto_mail.log', level=logging.DEBUG)
+    logging.basicConfig(filename=BASE_DIR+'/logs/auto_mail.log', level=logging.DEBUG)
 
     tmp_server = MailServer.objects.get(id=1)
 
@@ -136,7 +136,7 @@ def cancel_inform(request):
 
 
 def send_test(request):
-    logging.basicConfig(filename='/home/xyaw/auto_mail/logs/auto_mail.log', level=logging.DEBUG)
+    logging.basicConfig(filename=BASE_DIR+'/logs/auto_mail.log', level=logging.DEBUG)
 
     tmp_server = MailServer.objects.get(id=1)
 

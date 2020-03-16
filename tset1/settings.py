@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!vu#_b5ne5w9#4xj)vttlkk3hw!#f)ks$8o!#ck6+dy(-wrh@o'
+SECRET_KEY = '!vu#_b5ne5w9#4xj)vttlkk3hw!#f)ks$8o!#ck6+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -142,8 +142,8 @@ DEFAULT_FROM_EMAIL = '中華開放教育平台 <admin@twshop.asia>'
 Q_CLUSTER = {
     'name': 'DjangORM',
     'workers': 1,
-    'timeout': 1800,
-    'retry': 120,
+    'timeout': 600,
+    'retry': 800,
     'queue_limit': 50,
     'bulk': 10,
     'orm': 'default'
