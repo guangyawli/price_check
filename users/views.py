@@ -9,10 +9,28 @@ from users.forms import UploadExcelForm
 # Email
 from django.core.mail import EmailMultiAlternatives, get_connection
 from django.template import loader
-from tset1.settings import STATIC_ROOT,BASE_DIR
-import datetime,time
+from tset1.settings import STATIC_ROOT, BASE_DIR
+import datetime, time
 from django_q.models import Schedule
 import logging
+
+import json
+import requests
+
+
+def OpAPI(request):
+    rkey = 'Token rg9QcQMhKnp3D7wv'
+    course_ids = "course-v1%3AFCUx%2BQA76%2B20001"
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': rkey
+    }
+
+    r = requests.get("https://analytics-api.openedu.tw/api/v0/courses/"+course_ids+"/activity/",headers=headers)
+    res = r.json()
+    err_msg = res[0]['any'], res[0]['played_video'], res[0]['attempted_problem'], res[0]['posted_forum']
+    return render(request, "ihome.html", locals())
+
 
 def ximport(request):
     if request.user.is_staff is False:
@@ -70,7 +88,7 @@ def send_mails_ii():
 
     logging.basicConfig(filename=BASE_DIR+'/logs/auto_mail.log', level=logging.DEBUG)
 
-    tmp_server = MailServer.objects.get(id=1)
+    tmp_server = MailServer.objects.get(m_user='tw.openedu')
 
     conn = get_connection()
     conn.username = tmp_server.m_user  # username
@@ -136,9 +154,19 @@ def cancel_inform(request):
 
 
 def send_test(request):
+    rkey = 'Token rg9QcQMhKnp3D7wv'
+    course_ids = "course-v1%3AFCUx%2BQA76%2B20001"
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': rkey
+    }
+
+    r = requests.get("https://analytics-api.openedu.tw/api/v0/courses/" + course_ids + "/activity/", headers=headers)
+    res = r.json()
+
     logging.basicConfig(filename=BASE_DIR+'/logs/auto_mail.log', level=logging.DEBUG)
 
-    tmp_server = MailServer.objects.get(id=1)
+    tmp_server = MailServer.objects.get(m_user='tw.openedu')
 
     conn = get_connection()
     conn.username = tmp_server.m_user  # username
@@ -166,7 +194,11 @@ def send_test(request):
     context = {'insight_url': 'https://insights.openedu.tw/courses/',
                'course_id': test_course.course_id,
                'course_name': test_course.course_name,
-               'announcement': announcement
+               'announcement': announcement,
+               'course_partin': res[0]['any'],
+               'course_watch_video': res[0]['played_video'],
+               'course_try_problem': res[0]['attempted_problem'],
+               'course_try_discuss': res[0]['posted_forum']
                }
     # print(courses.course_name)
     email_template_name = 'insight_dash.html'

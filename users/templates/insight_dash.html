@@ -14,6 +14,21 @@
 	<p><a href="https://insights.openedu.tw/courses/{{ course_id }}">{{ course_name }}</a>&nbsp;</p>
 	</li>
 </ul>
+<p>上週課程概況：</p>
+<ul>
+	<li>
+	<p>上一週積極參與的學生: {{ course_partin }} </p>
+	</li>
+    <li>
+	<p>上一週至少觀看一部影片學生: {{ course_watch_video }}</p>
+	</li>
+    <li>
+	<p>上一週至少嘗試過一個問題學生: {{ course_try_problem }}</p>
+	</li>
+    <li>
+	<p>上一週有參與討論學生: {{ course_try_discuss }}</p>
+	</li>
+</ul>
 {% comment %}
 <p>步驟如下：</p>
 
