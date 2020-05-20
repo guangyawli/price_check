@@ -1,0 +1,729 @@
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 169, in send_test
+    tmp_server = MailServer.objects.get(id=1)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/query.py", line 406, in get
+    raise self.model.DoesNotExist(
+users.models.MailServer.DoesNotExist: MailServer matching query does not exist.
+WARNING:django.request:Not Found: /favicon.ico
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1%3AFCUx%2BQA76%2B20001/activity/ HTTP/1.1" 200 215
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 169, in send_test
+    tmp_server = MailServer.objects.get(id=1)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/query.py", line 406, in get
+    raise self.model.DoesNotExist(
+users.models.MailServer.DoesNotExist: MailServer matching query does not exist.
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1%3AFCUx%2BQA76%2B20001/activity/ HTTP/1.1" 200 215
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 169, in send_test
+    tmp_server = MailServer.objects.get(id=1)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/query.py", line 406, in get
+    raise self.model.DoesNotExist(
+users.models.MailServer.DoesNotExist: MailServer matching query does not exist.
+WARNING:django.request:Not Found: /favicon.ico
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1%3AFCUx%2BQA76%2B20001/activity/ HTTP/1.1" 200 215
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 169, in send_test
+    tmp_server = MailServer.objects.get(id=1)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/query.py", line 406, in get
+    raise self.model.DoesNotExist(
+users.models.MailServer.DoesNotExist: MailServer matching query does not exist.
+WARNING:django.request:Not Found: /favicon.ico
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1%3AFCUx%2BQA76%2B20001/activity/ HTTP/1.1" 200 215
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 169, in send_test
+    tmp_server = MailServer.objects.get(id=1)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/query.py", line 406, in get
+    raise self.model.DoesNotExist(
+users.models.MailServer.DoesNotExist: MailServer matching query does not exist.
+WARNING:django.request:Not Found: /favicon.ico
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1%3AFCUx%2BQA76%2B20001/activity/ HTTP/1.1" 200 215
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 169, in send_test
+    tmp_server = MailServer.objects.get(id=1)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/query.py", line 406, in get
+    raise self.model.DoesNotExist(
+users.models.MailServer.DoesNotExist: MailServer matching query does not exist.
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /ximport/
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 53, in ximport
+    date1 = datetime.datetime.strptime(col[5], '%Y-%m-%d')
+  File "/usr/local/lib/python3.8/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/usr/local/lib/python3.8/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '2017/01/01' does not match format '%Y-%m-%d'
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /ximport/
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: table users_tcourse has no column named start_date
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 55, in ximport
+    tmp_course = Tcourse.objects.create(dash_id=col[0], course_id=col[1], course_name=col[2],
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/query.py", line 422, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 740, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 777, in save_base
+    updated = self._save_table(
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 907, in _do_insert
+    return manager._insert([self], fields=fields, return_id=update_pk,
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1375, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: table users_tcourse has no column named start_date
+ERROR:django.request:Internal Server Error: /ximport/
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: table users_tcourse has no column named start_date
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 55, in ximport
+    tmp_course = Tcourse.objects.create(dash_id=col[0], course_id=col[1], course_name=col[2],
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/query.py", line 422, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 740, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 777, in save_base
+    updated = self._save_table(
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 907, in _do_insert
+    return manager._insert([self], fields=fields, return_id=update_pk,
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1375, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: table users_tcourse has no column named start_date
+ERROR:django.request:Internal Server Error: /ximport/
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: table users_tcourse has no column named start_date
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 55, in ximport
+    tmp_course = Tcourse.objects.create(dash_id=col[0], course_id=col[1], course_name=col[2],
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/query.py", line 422, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 740, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 777, in save_base
+    updated = self._save_table(
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 907, in _do_insert
+    return manager._insert([self], fields=fields, return_id=update_pk,
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1375, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: table users_tcourse has no column named start_date
+ERROR:django.request:Internal Server Error: /ximport/
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: table users_tcourse has no column named start_date
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 55, in ximport
+    tmp_course = Tcourse.objects.create(dash_id=col[0], course_id=col[1], course_name=col[2],
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/query.py", line 422, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 740, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 777, in save_base
+    updated = self._save_table(
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 907, in _do_insert
+    return manager._insert([self], fields=fields, return_id=update_pk,
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1375, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: table users_tcourse has no column named start_date
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 169, in send_test
+    tmp_server = MailServer.objects.get(id=1)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/query.py", line 406, in get
+    raise self.model.DoesNotExist(
+users.models.MailServer.DoesNotExist: MailServer matching query does not exist.
+INFO:django.utils.autoreload:/home/xyaw/PycharmProjects/auto_mail/users/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 180, in send_test
+    tmp_user = User.objects.get(username='tw.openedu')
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/query.py", line 406, in get
+    raise self.model.DoesNotExist(
+django.contrib.auth.models.User.DoesNotExist: User matching query does not exist.
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 169, in send_test
+    tmp_server = MailServer.objects.get(id=1)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/query.py", line 406, in get
+    raise self.model.DoesNotExist(
+users.models.MailServer.DoesNotExist: MailServer matching query does not exist.
+DEBUG:root:['guangyaw@hotmail.com', 'gyli@mail.fcu.edu.tw']2020-05-19 16:50:05.079678
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 191, in send_test
+    test_title = "OpenEdu 課程「"+test_course.course_name+"」本週學習分析"
+UnboundLocalError: local variable 'test_course' referenced before assignment
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /ximport/
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: table users_tcourse has no column named start_date
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 55, in ximport
+    tmp_course = Tcourse.objects.create(dash_id=col[0], course_id=col[1], course_name=col[2],
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/query.py", line 422, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 740, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 777, in save_base
+    updated = self._save_table(
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/base.py", line 907, in _do_insert
+    return manager._insert([self], fields=fields, return_id=update_pk,
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1375, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: table users_tcourse has no column named start_date
+DEBUG:root:['gyli@mail.fcu.edu.tw', 'gyli@mail.fcu.edu.tw']2020-05-19 17:06:38.071530
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 213, in send_test
+    msg.attach_file(STATIC_ROOT + 'insights_readme.pdf')
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/mail/message.py", line 337, in attach_file
+    with path.open('rb') as file:
+  File "/usr/local/lib/python3.8/pathlib.py", line 1218, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/usr/local/lib/python3.8/pathlib.py", line 1074, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/xyaw/PycharmProjects/auto_mail/root_static/insights_readme.pdf'
+DEBUG:root:['gyli@mail.fcu.edu.tw', 'gyli@mail.fcu.edu.tw']2020-05-19 17:09:14.162052
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 213, in send_test
+    msg.attach_file(STATIC_ROOT + 'insights_readme.pdf')
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/mail/message.py", line 337, in attach_file
+    with path.open('rb') as file:
+  File "/usr/local/lib/python3.8/pathlib.py", line 1218, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/usr/local/lib/python3.8/pathlib.py", line 1074, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/xyaw/PycharmProjects/auto_mail/root_static/insights_readme.pdf'
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1%3AFCUx%2BQA76%2B20001/activity/ HTTP/1.1" 200 215
+DEBUG:root:['gyli@mail.fcu.edu.tw', 'gyli@mail.fcu.edu.tw']2020-05-19 17:10:46.888047
+WARNING:django.request:Not Found: /favicon.ico
+DEBUG:root:['gyli@mail.fcu.edu.tw', 'gyli@mail.fcu.edu.tw']2020-05-19 17:21:18.868661
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1%3AFCUx%2BQA76%2B20001/activity/ HTTP/1.1" 200 215
+DEBUG:root:['gyli@mail.fcu.edu.tw', 'gyli@mail.fcu.edu.tw']2020-05-19 17:21:52.701084
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1%3AFCUx%2BQA76%2B20001/activity/ HTTP/1.1" 200 215
+DEBUG:root:['gyli@mail.fcu.edu.tw', 'gyli@mail.fcu.edu.tw']2020-05-19 17:30:14.428176
+INFO:django.utils.autoreload:/home/xyaw/PycharmProjects/auto_mail/users/views.py changed, reloading.
+DEBUG:root:['gyli@mail.fcu.edu.tw', 'gyli@mail.fcu.edu.tw']2020-05-20 09:12:38.332915
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 198, in send_test
+    'course_partin': res[0]['any'],
+KeyError: 0
+INFO:django.utils.autoreload:/home/xyaw/PycharmProjects/auto_mail/users/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/utils.py", line 941, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 180, in send_test
+    r = requests.get("https://analytics-api.openedu.tw/api/v0/courses/" + course_ids + "/activity/", headers=headers)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/sessions.py", line 452, in prepare_request
+    p.prepare(
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/models.py", line 314, in prepare
+    self.prepare_headers(headers)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/models.py", line 448, in prepare_headers
+    check_header_validity(header)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/utils.py", line 944, in check_header_validity
+    raise InvalidHeader("Value for header {%s: %s} must be of type str or "
+requests.exceptions.InvalidHeader: Value for header {Authorization: EdxKey object (1)} must be of type str or bytes, not <class 'users.models.EdxKey'>
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1:FCUx+QA76+19004/activity/ HTTP/1.1" 401 58
+DEBUG:root:['gyli@mail.fcu.edu.tw', 'gyli@mail.fcu.edu.tw']2020-05-20 09:35:23.452917
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 201, in send_test
+    'course_partin': res[0]['any'],
+KeyError: 0
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1:FCUx+QA76+19004/activity/ HTTP/1.1" 401 58
+DEBUG:root:['gyli@mail.fcu.edu.tw', 'gyli@mail.fcu.edu.tw']2020-05-20 09:35:36.346583
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 201, in send_test
+    'course_partin': res[0]['any'],
+KeyError: 0
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/utils.py", line 941, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 181, in send_test
+    r = requests.get("https://analytics-api.openedu.tw/api/v0/courses/" + course_ids + "/activity/", headers=headers)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/sessions.py", line 452, in prepare_request
+    p.prepare(
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/models.py", line 314, in prepare
+    self.prepare_headers(headers)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/models.py", line 448, in prepare_headers
+    check_header_validity(header)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/utils.py", line 944, in check_header_validity
+    raise InvalidHeader("Value for header {%s: %s} must be of type str or "
+requests.exceptions.InvalidHeader: Value for header {Authorization: EdxKey object (1)} must be of type str or bytes, not <class 'users.models.EdxKey'>
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 174, in send_test
+    rkey = EdxKey.objects[0]
+TypeError: 'Manager' object is not subscriptable
+INFO:django.utils.autoreload:/home/xyaw/PycharmProjects/auto_mail/users/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/utils.py", line 941, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 181, in send_test
+    r = requests.get("https://analytics-api.openedu.tw/api/v0/courses/" + course_ids + "/activity/", headers=headers)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/sessions.py", line 452, in prepare_request
+    p.prepare(
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/models.py", line 314, in prepare
+    self.prepare_headers(headers)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/models.py", line 448, in prepare_headers
+    check_header_validity(header)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/requests/utils.py", line 944, in check_header_validity
+    raise InvalidHeader("Value for header {%s: %s} must be of type str or "
+requests.exceptions.InvalidHeader: Value for header {Authorization: EdxKey object (1)} must be of type str or bytes, not <class 'users.models.EdxKey'>
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1:FCUx+QA76+19004/activity/ HTTP/1.1" 401 58
+DEBUG:root:['gyli@mail.fcu.edu.tw', 'gyli@mail.fcu.edu.tw']2020-05-20 09:40:02.140361
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 202, in send_test
+    'course_partin': res[0]['any'],
+KeyError: 0
+WARNING:django.request:Not Found: /favicon.ico
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1:FCUx+QA76+19004/activity/ HTTP/1.1" 200 170
+DEBUG:root:['gyli@mail.fcu.edu.tw', 'gyli@mail.fcu.edu.tw']2020-05-20 09:42:12.119166
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 204, in send_test
+    'course_try_problem': res[0]['attempted_problem'],
+KeyError: 'attempted_problem'
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1:FCUx+QA76+19004/activity/ HTTP/1.1" 200 170
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 184, in send_test
+    if res[0]['any'].exist():
+AttributeError: 'int' object has no attribute 'exist'
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1:FCUx+QA76+19004/activity/ HTTP/1.1" 200 170
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 194, in send_test
+    if res[0]['attempted_problem']:
+KeyError: 'attempted_problem'
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1:FCUx+QA76+19004/activity/ HTTP/1.1" 200 170
+ERROR:django.request:Internal Server Error: /send_test
+Traceback (most recent call last):
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xyaw/PycharmProjects/auto_mail/venv3/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xyaw/PycharmProjects/auto_mail/users/views.py", line 184, in send_test
+    if res[0]['any'].exist():
+AttributeError: 'int' object has no attribute 'exist'
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1:FCUx+QA76+19004/activity/ HTTP/1.1" 200 170
+DEBUG:root:['gyli@mail.fcu.edu.tw', 'gyli@mail.fcu.edu.tw']2020-05-20 10:00:36.833327
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1:FCUx+QA76+19004/activity/ HTTP/1.1" 200 170
+DEBUG:root:['gyli@mail.fcu.edu.tw', 'gyli@mail.fcu.edu.tw']2020-05-20 10:03:17.820996
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1:FCUx+QA76+19004/activity/ HTTP/1.1" 200 170
+DEBUG:root:['gyli@mail.fcu.edu.tw', 'gyli@mail.fcu.edu.tw']2020-05-20 13:32:48.566866
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1:FCUx+QA76+19004/activity/ HTTP/1.1" 200 170
+DEBUG:root:['gyli@mail.fcu.edu.tw']2020-05-20 13:38:16.707285
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/DYUx/dyu10401/201511/activity/ HTTP/1.1" 200 148
+DEBUG:root:['gyli@mail.fcu.edu.tw']2020-05-20 13:38:24.014968
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/course-v1:FCUx+QA76+19004/activity/ HTTP/1.1" 200 170
+DEBUG:root:['gyli@mail.fcu.edu.tw']2020-05-20 13:39:17.854879
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): analytics-api.openedu.tw:443
+DEBUG:urllib3.connectionpool:https://analytics-api.openedu.tw:443 "GET /api/v0/courses/DYUx/dyu10401/201511/activity/ HTTP/1.1" 200 148
+DEBUG:root:['gyli@mail.fcu.edu.tw']2020-05-20 13:39:24.331984

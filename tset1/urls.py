@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from users.views import ximport, send_mails, home, logout, cancel_inform, send_test, OpAPI
+from users.views import ximport, send_mails, home, logout, cancel_inform, send_test
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +25,4 @@ urlpatterns = [
     path('cancel_inform', cancel_inform, name='cancel_inform'),
     path('send_test', send_test, name='send_test'),
     path('logout/', logout, name='logout'),
-    path('op_apis/', OpAPI, name='OpAPI'),
 ]

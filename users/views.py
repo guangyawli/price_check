@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.contrib import auth
 from django.contrib.auth.models import User
 import xlrd
-from .models import Tcourse, Emails, MailServer, Tprofile
+from .models import Tcourse, Emails, MailServer, Tprofile, EdxKey
 from django.http import HttpResponse, HttpResponseRedirect
 from users.forms import UploadExcelForm
 # Email
@@ -14,22 +14,8 @@ import datetime, time
 from django_q.models import Schedule
 import logging
 
-import json
+#import json
 import requests
-
-
-def OpAPI(request):
-    rkey = 'Token rg9QcQMhKnp3D7wv'
-    course_ids = "course-v1%3AFCUx%2BQA76%2B20001"
-    headers = {
-        'Content-Type': 'application/json',
-        'Authorization': rkey
-    }
-
-    r = requests.get("https://analytics-api.openedu.tw/api/v0/courses/"+course_ids+"/activity/",headers=headers)
-    res = r.json()
-    err_msg = res[0]['any'], res[0]['played_video'], res[0]['attempted_problem'], res[0]['posted_forum']
-    return render(request, "ihome.html", locals())
 
 
 def ximport(request):
@@ -108,6 +94,38 @@ def send_mails_ii():
     for courses in all_courses:
         tmp_users = courses.tstaff.all()
 
+        # for insights
+        rkey = EdxKey.objects.first().auth_code
+        #print(rkey)
+        headers = {
+            'Content-Type': 'application/json',
+            'Authorization': rkey
+        }
+        course_ids = courses.course_id
+        r = requests.get("https://analytics-api.openedu.tw/api/v0/courses/" + course_ids + "/activity/",
+                         headers=headers)
+        res = r.json()
+        target_insights = []
+        if 'any' in res[0]:
+            target_insights.append(res[0]['any'])
+        else:
+            target_insights.append(0)
+
+        if 'played_video' in res[0]:
+            target_insights.append(res[0]['played_video'])
+        else:
+            target_insights.append(0)
+
+        if 'attempted_problem' in res[0]:
+            target_insights.append(res[0]['attempted_problem'])
+        else:
+            target_insights.append(0)
+
+        if 'posted_forum' in res[0]:
+            target_insights.append(res[0]['posted_forum'])
+        else:
+            target_insights.append(0)
+
         target_mails = []
         for tmp_user in tmp_users:
             target_mails.append(tmp_user.email)
@@ -124,7 +142,11 @@ def send_mails_ii():
         context = {'insight_url': 'https://insights.openedu.tw/courses/',
                    'course_id': courses.course_id,
                    'course_name': courses.course_name,
-                   'announcement': announcement
+                   'announcement': announcement,
+                   'course_partin': target_insights[0],
+                   'course_watch_video': target_insights[1],
+                   'course_try_problem': target_insights[2],
+                   'course_try_discuss': target_insights[3]
                    }
         # print(courses.course_name)
         email_template_name = 'insight_dash.html'
@@ -154,15 +176,6 @@ def cancel_inform(request):
 
 
 def send_test(request):
-    rkey = 'Token rg9QcQMhKnp3D7wv'
-    course_ids = "course-v1%3AFCUx%2BQA76%2B20001"
-    headers = {
-        'Content-Type': 'application/json',
-        'Authorization': rkey
-    }
-
-    r = requests.get("https://analytics-api.openedu.tw/api/v0/courses/" + course_ids + "/activity/", headers=headers)
-    res = r.json()
 
     logging.basicConfig(filename=BASE_DIR+'/logs/auto_mail.log', level=logging.DEBUG)
 
@@ -177,6 +190,39 @@ def send_test(request):
         if Tcourse.objects.filter(id=i).exists():
             test_course = Tcourse.objects.get(id=i)
             break
+
+    # for insights
+    rkey = EdxKey.objects.first().auth_code
+    #print(rkey)
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': rkey
+    }
+    course_ids = test_course.course_id
+    r = requests.get("https://analytics-api.openedu.tw/api/v0/courses/" + course_ids + "/activity/", headers=headers)
+    res = r.json()
+    target_insights=[]
+    if 'any' in res[0]:
+        target_insights.append(res[0]['any'])
+    else:
+        target_insights.append(0)
+
+    if 'played_video' in res[0]:
+        target_insights.append(res[0]['played_video'])
+    else:
+        target_insights.append(0)
+
+    if 'attempted_problem' in res[0]:
+        target_insights.append(res[0]['attempted_problem'])
+    else:
+        target_insights.append(0)
+
+    if 'posted_forum' in res[0]:
+        target_insights.append(res[0]['posted_forum'])
+    else:
+        target_insights.append(0)
+
+
     tmp_user = User.objects.get(username='tw.openedu')
     #tmp_user = User.objects.get(username='guangyaw')
 
@@ -195,10 +241,10 @@ def send_test(request):
                'course_id': test_course.course_id,
                'course_name': test_course.course_name,
                'announcement': announcement,
-               'course_partin': res[0]['any'],
-               'course_watch_video': res[0]['played_video'],
-               'course_try_problem': res[0]['attempted_problem'],
-               'course_try_discuss': res[0]['posted_forum']
+               'course_partin': target_insights[0],
+               'course_watch_video': target_insights[1],
+               'course_try_problem': target_insights[2],
+               'course_try_discuss': target_insights[3]
                }
     # print(courses.course_name)
     email_template_name = 'insight_dash.html'

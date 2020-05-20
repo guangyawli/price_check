@@ -30,3 +30,7 @@ class MailServer(models.Model):
   m_server = models.CharField(max_length=50, blank=False, default='mail.gandi.net')
   m_user = models.CharField(max_length=50, blank=False, default='test@twshop.asia')
   m_password = models.CharField(max_length=30, blank=False, default='default_password')
+
+
+class EdxKey(models.Model):
+  auth_code = models.CharField(max_length=50, blank=False, default='default_key')

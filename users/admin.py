@@ -1,5 +1,5 @@
 from django.contrib import admin
-from users.models import Tcourse, Emails, MailServer, Tprofile
+from users.models import Tcourse, Emails, MailServer, Tprofile, EdxKey
 
 
 class TcourseAdmin(admin.ModelAdmin):
@@ -18,8 +18,13 @@ class TprofileAdmin(admin.ModelAdmin):
     list_display = ('user', 'cancel_flag', 'cancel_reason')
 
 
+class EdxKeyAdmin(admin.ModelAdmin):
+    list_display = ('auth_code',)
+
+
 admin.site.register(Tcourse, TcourseAdmin)
 admin.site.register(Emails, EmailsAdmin)
 admin.site.register(MailServer, MailServerAdmin)
 admin.site.register(Tprofile, TprofileAdmin)
+admin.site.register(EdxKey, EdxKeyAdmin)
 
