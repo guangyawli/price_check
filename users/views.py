@@ -268,3 +268,93 @@ def send_test(request):
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect('/')
+
+
+def schedule_mails_test():
+#only for test once schedule. Should be the same as send_mails_ii(), only mail would be different with send_mails_ii()
+    logging.basicConfig(filename=BASE_DIR+'/logs/auto_mail.log', level=logging.DEBUG)
+
+    tmp_server = MailServer.objects.get(m_user='tw.openedu')
+
+    conn = get_connection()
+    conn.username = tmp_server.m_user  # username
+    conn.password = tmp_server.m_password  # password
+    conn.host = tmp_server.m_server  # mail server
+    conn.open()
+
+    # 尚未開課結束的所有課程
+    today = datetime.datetime.now()
+    delta = datetime.timedelta(days=-14)
+    target_day = today+delta
+    #print(target_day)
+    all_courses = Tcourse.objects.filter(end_date__gte=target_day).first()
+    # print(datetime.datetime.now())
+    # all_courses = Tcourse.objects.all()
+    # print(datetime.date.today())
+    #for courses in all_courses:
+    courses = all_courses
+    rkey = EdxKey.objects.first().auth_code
+    #print(rkey)
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': rkey
+    }
+    course_ids = courses.course_id
+    r = requests.get("https://analytics-api.openedu.tw/api/v0/courses/" + course_ids + "/activity/",
+                     headers=headers)
+    res = r.json()
+    target_insights = []
+    if 'any' in res[0]:
+        target_insights.append(res[0]['any'])
+    else:
+        target_insights.append(0)
+
+    if 'played_video' in res[0]:
+        target_insights.append(res[0]['played_video'])
+    else:
+        target_insights.append(0)
+
+    if 'attempted_problem' in res[0]:
+        target_insights.append(res[0]['attempted_problem'])
+    else:
+        target_insights.append(0)
+
+    if 'posted_forum' in res[0]:
+        target_insights.append(res[0]['posted_forum'])
+    else:
+        target_insights.append(0)
+
+    target_mails = []
+    target_mails.append('gyli@mail.fcu.edu.tw')
+    logging.debug(str(target_mails)+str(datetime.datetime.now()))
+
+    test_from = Emails.objects.get(e_status='default').e_from
+    test_title = "OpenEdu 課程「"+courses.course_name+"」本週學習分析"
+    announcement = Emails.objects.get(e_status='default').e_content
+
+    context = {'insight_url': 'https://insights.openedu.tw/courses/',
+                   'course_id': courses.course_id,
+                   'course_name': courses.course_name,
+                   'announcement': announcement,
+                   'course_partin': target_insights[0],
+                   'course_watch_video': target_insights[1],
+                   'course_try_problem': target_insights[2],
+                   'course_try_discuss': target_insights[3]
+               }
+        # print(courses.course_name)
+    email_template_name = 'insight_dash.html'
+    t = loader.get_template(email_template_name)
+
+    mail_list = target_mails
+
+    subject, from_email, to = test_title, test_from, mail_list
+    html_content = t.render(dict(context))  # str(test_content)
+    msg = EmailMultiAlternatives(subject, html_content, from_email, bcc=to)
+    msg.attach_alternative(html_content, "text/html")
+    msg.attach_file(STATIC_ROOT + 'insights_readme.pdf')
+    conn.send_messages([msg, ])  # send_messages发送邮件
+
+    conn.close()
+
+    if Schedule.objects.filter(name='send_mail_once').exists():
+        Schedule.objects.filter(name='send_mail_once').delete()
