@@ -6,19 +6,14 @@ from django.contrib import auth
 from django.contrib.auth.models import User
 import xlrd
 from .models import Nxproduct
-# from .models import Tcourse, Emails, MailServer, Tprofile, EdxKey
+
 # from django.http import HttpResponse, HttpResponseRedirect
 from users.forms import UploadExcelForm
 from django.db.models import Q
-# Email
-# from django.core.mail import EmailMultiAlternatives, get_connection
-# from django.template import loader
+
 # from proj1.settings import STATIC_ROOT, BASE_DIR
 from datetime import date,datetime
-
 import logging
-
-#import json
 import requests
 
 
@@ -141,22 +136,6 @@ def ximport(request):
 #                 return render(request, "ihome.html", locals())
 #
 #         return render(request, "uploadfile.html", locals())
-
-
-# def send_mails(request):
-#     if request.user.is_staff is False:
-#         err_msg = 'No permission !'
-#         return render(request, "ihome.html", locals())
-#     else:
-#         Schedule.objects.create(
-#             func='users.views.send_mails_ii',
-#             name='send_mail_once',
-#             repeats=1,
-#             next_run=datetime.datetime.now()
-#         )
-#         err_msg = 'send mail ok'
-#         return render(request, "ihome.html", locals())
-#
 
 def home(request):
     return render(request, "ihome.html", locals())
