@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>價格查詢</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="/static/assets/css/main.css" />
+</head>
+<body>
+    {% comment %}
+    {% endcomment %}
+<div class="inner">
+    <header class="special">
+{#    {% if not user.is_authenticated %}#}
+{#        <a href='/admin/login/?next=/' style="color:#cc3b35; font-size: 30px;" target="_self">請先登入</a>#}
+{#    {% endif %}#}
+    </header>
+</div>
+
+{% if err_msg %}
+<div class="inner">
+    <header class="special">
+        <div>
+            <p>
+                {{ err_msg }}
+            </p>
+        </div>
+        <div><span style="background-color:#ffffff"><span style="color:#000000; font-size: 20px;">
+            <a href= '/search'  style="color:#1155cc" target="_self">回查詢頁</a></span></span>
+        </div>
+    </header>
+</div>
+{% else %}
+{#    {% if user.is_authenticated %}#}
+    <section class="wrapper">
+				<div class="inner">
+					<header >
+						<h2>查詢資料</h2>
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <label for="mylabel">產品id:(可查詢多產品,以逗號隔開不要有空格) </label>
+                            <input id="myinput" type="text" name="my_target_id" >
+                            <label for="mylabel2">折扣:(請以整數表示,例如: 九折 填寫 90) </label>
+                            <input id="myinput2" type="text" name="my_target_discount">
+                            <input type="submit" value="送出查詢">
+                        </form>
+{#                        <a href='https://docs.google.com/document/d/e/2PACX-1vR_zFxJ2Y8htLLENScVxkHtZXh9oE6RoEu_YQFpakCrL4EUwGdT9RBIhUi1Bg0vIROOoVgWwP4g91je/pub' style="color:#cc3b35; font-size: 30px;" target="_self">點選觀看說明文件</a></span></span>#}
+{#						<p>歡迎進入， 請選擇要執行的項目</p>#}
+					</header>
+					<div class="highlights">
+                    {% if data %}
+						<section>
+                            <table>
+                            <tr><th>Product ID</th><th>新購定價 含第一年維護(單價)</th><th>License 定價 (單價)</th>
+                            <th>年度維護 定價(單價)</th><th>租賃一年定價</th><th>新購定價 (折扣價)</th><th>租賃一年 (折扣價)</th></tr>
+                            {% for info in data %}
+                                <tr>
+                                <td>{{ info.product_id }}</td>
+                                <td>{{ info.new_buy |floatformat:0}}</td>
+                                <td>{{ info.license_price |floatformat:0}}</td>
+                                <td>{{ info.Annual_maintain_Price |floatformat:0}}</td>
+                                <td>{{ info.Yearly_Sub_Price |floatformat:0}}</td>
+                                <td>{%widthratio info.new_buy 100 discount  %}</td>
+                                <td>{%widthratio info.Annual_maintain_Price 100 discount  %}</td>
+                                </tr>
+                           {% endfor %}
+                            </table>
+						</section>
+                    {% endif %}
+{#						<section>#}
+{#							<div class="content" style="padding: 10px">#}
+{#								<header>#}
+{#									<a href="/logout/" class="icon fa-line-chart"><span class="label">Icon</span></a>#}
+{#									<h3>登出</h3>#}
+{#								</header>#}
+{#							</div>#}
+{#						</section>#}
+					</div>
+				</div>
+			</section>
+{#    {% endif %}#}
+
+{% endif %}
+
+</body>
+</html>
