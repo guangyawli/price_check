@@ -14,7 +14,7 @@ from django.db.models import Q
 # from proj1.settings import STATIC_ROOT, BASE_DIR
 from datetime import date,datetime
 import logging
-import requests
+#import requests
 
 
 def search(request):
@@ -98,44 +98,6 @@ def ximport(request):
 
     return render(request, "uploadfile.html", locals())
 
-
-# def oimport(request):
-#     if request.user.is_staff is False:
-#         err_msg = 'No permission !'
-#         return render(request, "ihome.html", locals())
-#     else:
-#         if request.method == 'POST':
-#             form = UploadExcelForm(request.POST, request.FILES)
-#             if form.is_valid():
-#                 wb = xlrd.open_workbook(filename=None, file_contents=request.FILES['excel'].read())
-#                 table = wb.sheets()[0]
-#                 row = table.nrows
-#                 for i in range(1, row):
-#                     col = table.row_values(i)
-#                     print(col)
-#
-#                     # if not User.objects.filter(username=col[3]).exists():
-#                     #     tmp_user = User.objects.create(username=col[3], email=col[4])
-#                     # else:
-#                     #     tmp_user = User.objects.get(username=col[3])
-#                     # if not Tcourse.objects.filter(dash_id=col[0]).exists():
-#                     #     date1 = datetime.datetime.strptime(col[5], '%Y-%m-%d')
-#                     #     date2 = datetime.datetime.strptime(col[6], '%Y-%m-%d')
-#                     #     tmp_course = Tcourse.objects.create(dash_id=col[0], course_id=col[1], course_name=col[2],
-#                     #                                         start_date=date1, end_date=date2)
-#                     # else:
-#                     #     tmp_course = Tcourse.objects.get(dash_id=col[0], course_id=col[1])
-#                     #
-#                     # if tmp_user not in Tcourse.objects.get(course_id=col[1]).tstaff.all():
-#                     #     Tcourse.objects.get(course_id=col[1]).tstaff.add(tmp_user)
-#
-#                 err_msg = 'import data ok'
-#                 return render(request, "ihome.html", locals())
-#             else:
-#                 err_msg = 'invalid file type'
-#                 return render(request, "ihome.html", locals())
-#
-#         return render(request, "uploadfile.html", locals())
 
 def home(request):
     return render(request, "ihome.html", locals())
